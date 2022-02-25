@@ -1,8 +1,11 @@
 from django.urls import path
-
+ 
 from . import views
-
+ 
+app_name = 'posts'
+ 
 urlpatterns = [
-    path('', views.index),
-    path('group/<slug:slug>/', views.group_posts),
-] 
+    path('', views.index, name = 'index'),
+    path('group/<slug:slug>/', views.group_list, name='group_list'),
+    path('posts/', views.index, name = 'posts')
+]
